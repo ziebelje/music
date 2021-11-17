@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chord Printer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="js/jspdf.umd.min.js"></script>
+    <script src="js/ccp.js"></script>
+
+    <script src="songs/great_are_you_lord.js"></script>
+    <script src="songs/build_my_life.js"></script>
+    <script src="songs/bigger_than.js"></script>
+    <script src="songs/have_my_heart.js"></script>
+    <script src="songs/great_things.js"></script>
+    <script src="songs/glorious_day.js"></script>
+    <script src="songs/goodness_of_god.js"></script>
+    <script src="songs/hark_the_herald_angels_sing.js"></script>
+    <script src="songs/king_of_my_heart.js"></script>
+    <script src="songs/hark_the_herald.js"></script>
+  </head>
+  <style>
+    * {
+      font-family: Consolas;
+      font-size: 12px;
+    }
+    .song_title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .title {
+      font-weight: bold;
+    }
+    .chord {
+      color: red;
+      font-weight: bold;
+      white-space: pre;
+    }
+    .note {
+      color: #777;
+      font-style: italic;
+    }
+  </style>
+  <body>
+    <script>
+      ccp.render_song_list();
+    </script>
+  </body>
+</html>
