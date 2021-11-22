@@ -207,42 +207,19 @@ ccp.set_transpose = function(i, transpose) {
  * Render a list of songs out to the window.
  */
 ccp.render_song_list = function() {
-  let html = '';
-  html += '<table border="1">';
-  html += '<tr>';
-  html += '<td>Title</td>';
-  html += '<td>Author</td>';
-  // html += '<td>Key (Written)</td>';
-  // html += '<td>Key (Effective)</td>';
-  // html += '<td>Transpose</td>';
-  // html += '<td>Capo</td>';
-  html += '<td>Timing</td>';
-  html += '<td>Tempo</td>';
-  html += '<td>Example</td>';
-  html += '</tr>';
-  ccp.songs.forEach(function(song, i) {
-    // const key_written = song.key;
-    // parsed = ccp.parse(song);
-    // const key_parsed = song.key;
-    html += '<tr onclick="ccp.render_song(' + i + ')">';
-    html += '<td>' + song.title + '</td>';
-    html += '<td>' + song.author + '</td>';
-    // html += '<td>' + key_written + '</td>';
-    // html += '<td>' + key_parsed + '</td>';
-    // html += '<td>' + song.transpose + '</td>';
-    // html += '<td>' + song.capo + '</td>';
-    html += '<td>' + song.timing + '</td>';
-    html += '<td>' + song.tempo + '</td>';
-    if(song.example !== undefined) {
-      html += '<td><a href="' + song.example + '" target="_blank">' + song.example + '</a></td>';
-    } else {
-      html += '<td></td>';
-    }
-    html += '</tr>';
+  ccp.songs.sort(function(a, b) {
+    return a.title.localeCompare(b.title);
   });
-  html += '</table>';
 
-  document.write(html);
+  let html = '';
+  ccp.songs.forEach(function(song, i) {
+    html += '<div class="song" onclick="ccp.render_song(' + i + ')">';
+    html += '<div class="song_title">' + song.title + '</div>';
+    html += '<div class="song_author">' + song.author + '</div>';
+    html += '</div>';
+  });
+
+  document.body.innerHTML = html
 }
 
 ccp.render_song = function(i, download) {
@@ -262,7 +239,7 @@ ccp.render_song = function(i, download) {
     'format': 'letter',
     'putOnlyUsedFonts': true
   });
-  let html = '<html><head><title>' + song.title + '</title></head><body>';
+  let html = '<div class="chord_sheet">';
 
   const page_width = pdf.internal.pageSize.getWidth();
   const page_height = pdf.internal.pageSize.getHeight();
@@ -286,7 +263,7 @@ ccp.render_song = function(i, download) {
   const title = parsed.title + ' [' + (parsed.my_key || parsed.key) + ']';
   const title_width = pdf.getTextWidth(title);
   pdf.text(title, x, y);
-  html += '<div class="song_title">' + title + '</div>';
+  html += '<div class="header"><div class="title">' + title + '</div><div class="author">' + parsed.author + '</div></div>';
 
   let extra_info = [];
   if(parsed.capo !== 0) {
@@ -302,12 +279,15 @@ ccp.render_song = function(i, download) {
     extra_info.push('Tuning: ' + parsed.tuning);
   }
 
+
   if(extra_info.length > 0) {
     pdf.setFont('courier', 'italic');
     pdf.setFontSize(10);
     pdf.setTextColor(150, 150, 150);
     pdf.text(extra_info.join(', '), (x + title_width + 2), y);
-    html += '<div class="extra_info">' + extra_info.join(', ') + '</div>';
+    html += '<div class="extra_info">' + extra_info.join(' • ');
+    html += '<span style="cursor: pointer" onclick="ccp.render_song(' + i + ', true);"> • Download</span>';
+    html += '</div>';
   }
 
   y += 4;
@@ -316,28 +296,39 @@ ccp.render_song = function(i, download) {
   pdf.setFontSize(10);
   pdf.setTextColor(0, 0, 0);
   pdf.text(parsed.author, x, y);
-  html += '<div class="author">' + parsed.author + '</div>';
   y += 8;
 
   // HTML Transposer Controls
-  html += '<table border="1">';
+  html += '<table cellpadding="0" cellspacing="0" width="100%">';
   html += '<tr>';
+
+  html += '<td width="4%"><div class="transpose_down" onclick="ccp.set_transpose(' + i + ',' + (+window.localStorage.getItem(ccp.get_local_storage_key(song) + '.transpose') - 1) + ');">-</div></td>';
+  html += '<td class="transpose_value">' + (+window.localStorage.getItem(ccp.get_local_storage_key(song) + '.transpose')) + '</td>';
+  html += '<td width="4%"><div class="transpose_up" onclick="ccp.set_transpose(' + i + ',' + (+window.localStorage.getItem(ccp.get_local_storage_key(song) + '.transpose') + 1) + ');">+</div></td>';
+
   ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'].forEach(function(key) {
-    html += '<td onclick="ccp.set_key(' + i + ', \'' + key + '\');">' + key + '</td>';
+    var td_class;
+    if(key === parsed.key) {
+      td_class = "key_selector_active";
+    } else {
+      td_class = "key_selector_inactive";
+    }
+    html += '<td width="7.2%" class="' + td_class + '" onclick="ccp.set_key(' + i + ', \'' + key + '\');">' + key + '</td>';
   });
   html += '</tr>';
   html += '</table>';
 
-  html += '<table border="1">';
-  html += '<tr>';
-  html += '<td onclick="ccp.set_transpose(' + i + ',' + (+window.localStorage.getItem(ccp.get_local_storage_key(song) + '.transpose') - 1) + ');">-</td>';
-  html += '<td>' + (+window.localStorage.getItem(ccp.get_local_storage_key(song) + '.transpose')) + '</td>';
-  html += '<td onclick="ccp.set_transpose(' + i + ',' + (+window.localStorage.getItem(ccp.get_local_storage_key(song) + '.transpose') + 1) + ');">+</td>';
-  html += '</tr>';
-  html += '</table>';
-
-  // Download PDF
-  html += '<div onclick="ccp.render_song(' + i + ', true);">Download</div>';
+  // html += '<div class="actions">';
+  // html += '<table cellpadding="0" cellspacing="0">';
+  // html += '<tr>';
+  // html += '<td>Transpose: </td>';
+  // html += '<td><div class="transpose_down" onclick="ccp.set_transpose(' + i + ',' + (+window.localStorage.getItem(ccp.get_local_storage_key(song) + '.transpose') - 1) + ');">-</div></td>';
+  // html += '<td>' + (+window.localStorage.getItem(ccp.get_local_storage_key(song) + '.transpose')) + '</td>';
+  // html += '<td><div class="transpose_up" onclick="ccp.set_transpose(' + i + ',' + (+window.localStorage.getItem(ccp.get_local_storage_key(song) + '.transpose') + 1) + ');">+</div></td>';
+  // html += '<td><div onclick="ccp.render_song(' + i + ', true);">Download</div></td>';
+  // html += '</tr>';
+  // html += '</table>';
+  // html += '</div>';
 
   const column_y = y;
 
@@ -345,6 +336,7 @@ ccp.render_song = function(i, download) {
   pdf.setFont('courier', 'normal');
 
   let current_line = 0;
+  html += '<div class="sections">';
   parsed.chart.forEach(function(section) {
     // Check to see if we need to switch to a new column.
     if(balance_columns === true) {
@@ -401,8 +393,8 @@ ccp.render_song = function(i, download) {
     })
 
   });
-
-  html += '</body></html>';
+  html += '</div>'; // End sections
+  html += '</div>'; // End chord_sheet
 
   if(download === true) {
     pdf.save(parsed.title + ' - ' + parsed.author + ' [' + parsed.key + '].pdf');

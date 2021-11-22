@@ -6,7 +6,7 @@ ccp.songs.push({
   'capo': 2,
   'tempo': 125,
   'timing': '4/4',
-  'example': '',
+  'example': undefined,
   'chart': `[Intro]
 A  Bm7  A/C#  D2
 
@@ -59,7 +59,7 @@ F#m7             D     E
 Mild He lays His glory by
 F#m7             D        E
 Born that man no more may die
-D                      A/C#  D
+D
 Born to raise the sons of    earth
 Esus              A/C#
 Born to give them second birth
@@ -69,14 +69,12 @@ A/C#  D      E
 Glory to the newborn King!
 
 [Instrumental]
-A  Bm7  A/C#  D2
-A  Bm7  A/C#  D2
+A  E/G# A/C#  D2
+A  E/G# A/C#  D2
 
 [Turnaround]
 A  A  A  A
-Oh Oh ...
-A  Bm7  A/C#  D2
-Oh Oh ...
+Oh Oh Oh Oh Oh Oh Oh
 
 [Build]
 A            Bm7
