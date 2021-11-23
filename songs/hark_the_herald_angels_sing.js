@@ -14,7 +14,6 @@ A  Bm7  A/C#  D2
 
 A  Bm7  A/C#  D2
 A  Bm7  A/C#  D2
-A  Bm7  A/C#  D2
 A  A
 
 [Verse 1a]

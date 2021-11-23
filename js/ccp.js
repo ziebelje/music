@@ -286,7 +286,8 @@ ccp.render_song = function(i, download) {
     pdf.setTextColor(150, 150, 150);
     pdf.text(extra_info.join(', '), (x + title_width + 2), y);
     html += '<div class="extra_info">' + extra_info.join(' • ');
-    html += '<span style="cursor: pointer" onclick="ccp.render_song(' + i + ', true);"> • Download</span>';
+    html += '<span style="cursor: pointer" onclick="ccp.render_song(' + i + ', true);"> ▼ Rehearsal</span>';
+    html += '<span style="cursor: pointer" onclick="ccp.download_live(' + i + ');"> ▼ Live</span>';
     html += '</div>';
   }
 
@@ -401,4 +402,145 @@ ccp.render_song = function(i, download) {
   }
 
   document.body.innerHTML = html;
+}
+
+/**
+ * Download a PDF for use when playing live.
+ */
+ccp.download_live = function(i) {
+  const song = ccp.songs[i];
+  const parsed = ccp.parse(song);
+
+  const line_limit = 25;
+  const show_chords = true;
+
+  /**
+   * Try to make the columns relatively even in height instead of filling
+   * the left column first.
+   */
+  // const balance_columns = true;
+
+  const pdf = new jspdf.jsPDF({
+    'format': 'letter',
+    'putOnlyUsedFonts': true
+  });
+
+  const page_width = pdf.internal.pageSize.getWidth();
+  const page_height = pdf.internal.pageSize.getHeight();
+
+  // PDF background
+  pdf.setFillColor('#2e2e2e');
+  pdf.rect(0, 0, page_width, page_height, 'F');
+
+  const margin = 10;
+  const column_spacing = 5;
+
+  // const column_x = [
+  //   margin,
+  //   (page_width / 2) + (column_spacing / 2)
+  // ];
+  // const column_width = (page_width - (margin * 2) - column_spacing) / 2;
+
+  let x = margin;
+  let y = margin;
+
+  pdf.setFont('courier', 'bold');
+  pdf.setFontSize(16);
+  pdf.setTextColor('#d6d6d6');
+
+  const title = parsed.title + ' [' + (parsed.my_key || parsed.key) + ']';
+  const title_width = pdf.getTextWidth(title);
+  pdf.text(title, x, y);
+
+  let extra_info = [];
+  if(parsed.capo !== 0) {
+    extra_info.push('Capo: ' + parsed.capo);
+  }
+  if(parsed.timing !== undefined) {
+    extra_info.push('Timing: ' + parsed.timing);
+  }
+  if(parsed.tempo !== undefined) {
+    extra_info.push('Tempo: ' + parsed.tempo + 'bpm');
+  }
+  if(parsed.tuning !== undefined) {
+    extra_info.push('Tuning: ' + parsed.tuning);
+  }
+
+
+  if(extra_info.length > 0) {
+    pdf.setFont('courier', 'italic');
+    pdf.setFontSize(10);
+    pdf.setTextColor('#d6d6d6');
+    pdf.text(extra_info.join(', '), (x + title_width + 2), y);
+  }
+
+  y += 4;
+
+  pdf.setFont('courier', 'normal');
+  pdf.setFontSize(10);
+  pdf.setTextColor('#d6d6d6');
+  pdf.text(parsed.author, x, y);
+  y += 8;
+
+  // const column_y = y;
+
+  pdf.setFontSize(20);
+  pdf.setFont('courier', 'normal');
+
+  let current_line = 0;
+  parsed.chart.forEach(function(section) {
+    if(current_line + section.length > line_limit) {
+      pdf.addPage();
+
+      // PDF background
+      pdf.setFillColor('#2e2e2e');
+      pdf.rect(0, 0, page_width, page_height, 'F');
+
+      x = margin;
+      y = margin;
+      current_line = 0;
+    }
+
+    section.forEach(function(line) {
+      switch(line.type) {
+        case 'chord':
+          if(show_chords === true) {
+            pdf.setFont('courier', 'normal');
+            pdf.setTextColor('#e5b567');
+            pdf.text(line.text, x, y);
+            y += 2.8*2;
+          }
+        break;
+        case 'title':
+          pdf.setFillColor('#333435');
+          pdf.rect(x, (y - 3), page_width, 4, 'F');
+          pdf.setFont('courier', 'bold');
+          pdf.setTextColor('#d6d6d6');
+          pdf.text(line.text.trim(), (x + 0.5), y);
+          y += 4.2*2;
+        break;
+        case 'lyric':
+          pdf.setFont('courier', 'normal');
+          pdf.setTextColor('#d6d6d6');
+          pdf.text(line.text, x, y);
+          y += 3.5*2;
+        break;
+        case 'note':
+          pdf.setFont('courier', 'italic');
+          pdf.setTextColor('#797979');
+          pdf.text(line.text, x, y);
+          y += 3*2;
+        break;
+      }
+      current_line++;
+
+    })
+
+  });
+
+  pdf.save(parsed.title + ' - ' + parsed.author + ' [' + parsed.key + '].pdf');
+}
+
+ccp.download_rehearsal = function(i) {
+
 }
