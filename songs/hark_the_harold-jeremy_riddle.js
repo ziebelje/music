@@ -1,12 +1,10 @@
 ccp.songs.push({
   'title': 'Hark The Herald',
   'author': 'Jeremy Riddle',
-  'key': 'F',
-  'transpose': 0,
-  'capo': 0,
+  'key': 'E',
   'tempo': 90,
   'timing': '4/4',
-  'example': '',
+  'example': undefined,
   'chart': `[Verse 1]
 E
 Hark the herald angels sing "Glory to the new born King

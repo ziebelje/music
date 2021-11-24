@@ -2,8 +2,6 @@ ccp.songs.push({
   'title': 'Hark The Herald Angels Sing',
   'author': 'Lincoln Brewster',
   'key': 'A',
-  'transpose': -2,
-  'capo': 2,
   'tempo': 125,
   'timing': '4/4',
   'example': undefined,

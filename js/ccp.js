@@ -43,9 +43,6 @@ ccp.parse = function(song) {
   });
   chart.push(section);
 
-  // song.transpose === 0;
-  // song.capo === 0;
-
   // Transpose from the written key to the selected key.
   const lookup = {
     'A': 0,
@@ -79,7 +76,6 @@ ccp.parse = function(song) {
     'title': song.title,
     'author': song.author,
     'key': key,
-    // 'transpose': song.my_transpose || 0,
     'capo': transpose * -1,
     'tempo': song.tempo,
     'timing': song.timing,
