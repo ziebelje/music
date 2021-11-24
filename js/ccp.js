@@ -411,14 +411,7 @@ ccp.download_live = function(i) {
   const song = ccp.songs[i];
   const parsed = ccp.parse(song);
 
-  const line_limit = 25;
-  const show_chords = true;
-
-  /**
-   * Try to make the columns relatively even in height instead of filling
-   * the left column first.
-   */
-  // const balance_columns = true;
+  const line_limit = 30;
 
   const pdf = new jspdf.jsPDF({
     'format': 'letter',
@@ -428,108 +421,93 @@ ccp.download_live = function(i) {
   const page_width = pdf.internal.pageSize.getWidth();
   const page_height = pdf.internal.pageSize.getHeight();
 
-  // PDF background
-  pdf.setFillColor('#2e2e2e');
-  pdf.rect(0, 0, page_width, page_height, 'F');
+  const margin = 5;
 
-  const margin = 10;
-  const column_spacing = 5;
+  let x, y, current_line;
 
-  // const column_x = [
-  //   margin,
-  //   (page_width / 2) + (column_spacing / 2)
-  // ];
-  // const column_width = (page_width - (margin * 2) - column_spacing) / 2;
+  const draw_page_header = function() {
+    // PDF background
+    pdf.setFillColor('#2e2e2e');
+    pdf.rect(0, 0, page_width, page_height, 'F');
 
-  let x = margin;
-  let y = margin;
+    x = margin;
+    y = margin + 4; // Add extra due to text placing from the bottom left corner.
+    current_line = 0;
 
-  pdf.setFont('courier', 'bold');
-  pdf.setFontSize(16);
-  pdf.setTextColor('#d6d6d6');
-
-  const title = parsed.title + ' [' + (parsed.my_key || parsed.key) + ']';
-  const title_width = pdf.getTextWidth(title);
-  pdf.text(title, x, y);
-
-  let extra_info = [];
-  if(parsed.capo !== 0) {
-    extra_info.push('Capo: ' + parsed.capo);
-  }
-  if(parsed.timing !== undefined) {
-    extra_info.push('Timing: ' + parsed.timing);
-  }
-  if(parsed.tempo !== undefined) {
-    extra_info.push('Tempo: ' + parsed.tempo + 'bpm');
-  }
-  if(parsed.tuning !== undefined) {
-    extra_info.push('Tuning: ' + parsed.tuning);
-  }
-
-
-  if(extra_info.length > 0) {
-    pdf.setFont('courier', 'italic');
-    pdf.setFontSize(10);
+    pdf.setFont('courier', 'bold');
+    pdf.setFontSize(20);
     pdf.setTextColor('#d6d6d6');
-    pdf.text(extra_info.join(', '), (x + title_width + 2), y);
-  }
 
-  y += 4;
+    const title = parsed.title + ' [' + (parsed.my_key || parsed.key) + ']';
+    pdf.text(title, x, y);
 
-  pdf.setFont('courier', 'normal');
-  pdf.setFontSize(10);
-  pdf.setTextColor('#d6d6d6');
-  pdf.text(parsed.author, x, y);
-  y += 8;
+    y += 6;
 
-  // const column_y = y;
+    let extra_info = [];
+    if(parsed.capo !== 0) {
+      extra_info.push('Capo: ' + parsed.capo);
+    }
+    if(parsed.timing !== undefined) {
+      extra_info.push('Timing: ' + parsed.timing);
+    }
+    if(parsed.tempo !== undefined) {
+      extra_info.push('Tempo: ' + parsed.tempo + 'bpm');
+    }
+    if(parsed.tuning !== undefined) {
+      extra_info.push('Tuning: ' + parsed.tuning);
+    }
 
-  pdf.setFontSize(20);
-  pdf.setFont('courier', 'normal');
+    pdf.setFont('courier', 'normal');
+    pdf.setFontSize(14);
+    pdf.setTextColor('#d6d6d6');
+    pdf.text(parsed.author, x, y);
+    y += 5;
 
-  let current_line = 0;
+    pdf.text(extra_info.join(' • '), x, y);
+    y += 10;
+  };
+
+  draw_page_header();
+
+
+
   parsed.chart.forEach(function(section) {
     if(current_line + section.length > line_limit) {
       pdf.addPage();
-
-      // PDF background
-      pdf.setFillColor('#2e2e2e');
-      pdf.rect(0, 0, page_width, page_height, 'F');
-
-      x = margin;
-      y = margin;
-      current_line = 0;
+      draw_page_header();
     }
 
     section.forEach(function(line) {
       switch(line.type) {
         case 'chord':
-          if(show_chords === true) {
-            pdf.setFont('courier', 'normal');
-            pdf.setTextColor('#e5b567');
-            pdf.text(line.text, x, y);
-            y += 2.8*2;
-          }
+          pdf.setFont('courier', 'bold');
+          pdf.setFontSize(20);
+          pdf.setTextColor('#e5b567');
+          pdf.text(line.text, x, y);
+          y += 6;
         break;
         case 'title':
           pdf.setFillColor('#333435');
-          pdf.rect(x, (y - 3), page_width, 4, 'F');
+          pdf.rect(x, (y - 6), page_width - (margin * 2), 8, 'F');
           pdf.setFont('courier', 'bold');
+          pdf.setFontSize(20);
           pdf.setTextColor('#d6d6d6');
-          pdf.text(line.text.trim(), (x + 0.5), y);
-          y += 4.2*2;
+          pdf.text(line.text.trim(), (x + 2), y);
+          y += 8;
         break;
         case 'lyric':
           pdf.setFont('courier', 'normal');
+          pdf.setFontSize(20);
           pdf.setTextColor('#d6d6d6');
           pdf.text(line.text, x, y);
-          y += 3.5*2;
+          y += 7;
         break;
         case 'note':
           pdf.setFont('courier', 'italic');
+          pdf.setFontSize(20);
           pdf.setTextColor('#797979');
           pdf.text(line.text, x, y);
-          y += 3*2;
+          y += 6;
         break;
       }
       current_line++;

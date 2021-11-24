@@ -17,6 +17,11 @@
     <script src="songs/hark_the_herald_angels_sing.js"></script>
     <script src="songs/king_of_my_heart.js"></script>
     <script src="songs/hark_the_herald.js"></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300;500&family=Roboto:wght@300;500&display=swap');
+    </style>
+
   </head>
   <style>
 
@@ -33,7 +38,7 @@
      */
 
     body {
-      font-family: Roboto;
+      font-family: 'Roboto', sans-serif;
       font-size: 10px;
       background: #2e2e2e;
       color: #d6d6d6;
@@ -116,7 +121,7 @@
 
     .chord_sheet .transpose_down, .chord_sheet .transpose_up {
       border: 1px solid #b4d273;
-      font-weight: bold;
+      font-weight: 500;
       text-align: center;
     }
 
@@ -134,22 +139,24 @@
       font-size: 1rem;
       background: #333435;
       padding: 2px;
-      font-weight: bold;
+      font-weight: 500;
     }
 
     .chord_sheet .sections .chord {
-      font-family: Consolas, Courier;
+      font-family: 'Red Hat Mono', monospace;
       color: #e5b567;
-      font-weight: bold;
+      font-weight: 500;
       white-space: pre;
     }
 
     .chord_sheet .sections .lyric {
-      font-family: Consolas, Courier;
+      font-family: 'Red Hat Mono', monospace;
+      font-weight: 300;
       white-space: pre;
     }
     .chord_sheet .sections .note {
-      font-family: Consolas, Courier;
+      font-family: 'Red Hat Mono', monospace;
+      font-weight: 300;
       white-space: pre;
       color: #797979;
       font-style: italic;
