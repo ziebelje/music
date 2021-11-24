@@ -411,7 +411,7 @@ ccp.download_live = function(i) {
   const song = ccp.songs[i];
   const parsed = ccp.parse(song);
 
-  const line_limit = 30;
+  const line_limit = 35;
 
   const pdf = new jspdf.jsPDF({
     'format': 'letter',
