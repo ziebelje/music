@@ -1,6 +1,6 @@
 ccp.songs.push({
   'title': 'Goodness of God',
-  'author': 'Bethel Music',
+  'author': 'Jenn Johnson & Bethel Music',
   'key': 'G',
   'transpose': 0,
   'capo': 0,
@@ -8,7 +8,8 @@ ccp.songs.push({
   'timing': '4/4',
   'example': 'https://www.youtube.com/watch?v=qq-s4RvK39U&t=934s',
   'chart': `[Intro]
-G  Gsus4  G  Gsus4
+G  Gsus4  G  Gsus4  G
+G  Gsus4  G  Gsus4  G
 
 [Verse 1]
             G

@@ -1,5 +1,5 @@
 ccp.songs.push({
-  'title': 'Hark The Herald Angels Sing',
+  'title': 'Hark! The Herald Angels Sing',
   'author': 'Lincoln Brewster',
   'key': 'A',
   'tempo': 125,
@@ -57,7 +57,7 @@ Mild He lays His glory by
 F#m7             D        E
 Born that man no more may die
 D
-Born to raise the sons of    earth
+Born to raise the sons of earth
 Esus              A/C#
 Born to give them second birth
 D         E      F#m7
@@ -88,6 +88,7 @@ A/C#         D2
 Glory to the King
 
 // Repeat 2x
+// End abruptly on the last eighth note
 
 [Outro]
 

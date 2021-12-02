@@ -1,6 +1,6 @@
 ccp.songs.push({
   'title': 'Great Things',
-  'author': 'Phil Wickam',
+  'author': 'Phil Wickham',
   'key': 'A',
   'transpose': 0,
   'capo': 0,

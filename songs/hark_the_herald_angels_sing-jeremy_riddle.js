@@ -1,17 +1,20 @@
 ccp.songs.push({
-  'title': 'Hark The Herald',
+  'title': 'Hark! The Herald Angels Sing',
   'author': 'Jeremy Riddle',
   'key': 'E',
   'tempo': 90,
   'timing': '4/4',
   'example': undefined,
-  'chart': `[Verse 1]
+  'chart': `[Intro]
+E  E  E  E
+
+[Verse 1]
 E
 Hark the herald angels sing
 
 "Glory to the new born King
 E
-Peace on earth and mercy mild
+Peace on Earth and mercy mild
 B7
 God and sinners reconciled"
 E             A       B
@@ -38,13 +41,13 @@ Christ the everlasting Lord;
 E
 Late in time behold him come,
 B7
-Offspring of the Virgin's womb.
+Offspring of the virgin's womb.
 E/G#                 A        B
 Veiled in flesh, the God-head see;
 E                  A  B
 hail the incarnate Diety
 A                   F#m
-Pleased as man with men to dwell,
+Pleased with man as men to dwell,
 B      E      A   B   E
 Jesus, our Im-man-u - el
 A               F#m
@@ -70,7 +73,7 @@ Mild He lays His glory by,
 E/G#             A        B
 born that man no more may die
 A                 F#m
-Born to raise the sons of earth,
+Born to raise the sons of Earth,
 B       E         A  B    E
 born to give them se-cond birth
 A               F#m
@@ -96,7 +99,7 @@ Mild He lays His glory by,
 E/G#             A        B
 born that man no more may die
 A                 F#m
-Born to raise the sons of earth,
+Born to raise the sons of Earth,
 B       E         A  B    E
 born to give them se-cond birth
 A               F#m
@@ -109,8 +112,12 @@ E  A  C#m  A
 E  A  C#m  A
 E  A  C#m  A
 
+// Loud
+
 [Ending]
 E  A  C#m  A
 E  A  C#m  A
+
+// Quiet
 `
 });

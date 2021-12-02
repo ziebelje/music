@@ -1,6 +1,6 @@
 ccp.songs.push({
   'title': 'King of My Heart',
-  'author': 'Bethel',
+  'author': 'Steffany Gretzinger & Bethel Music',
   'key': 'G',
   'tempo': 68,
   'timing': '4/4',
@@ -11,7 +11,7 @@ C  G
 Em   D
 C  G
 
-[Verse]
+[Verse 1]
         G
 Let the King of my heart
        C                G
@@ -28,7 +28,7 @@ be the shadow where I hide
     Em            D
 The ransom for my life
        C     G
-oh He, is my song
+oh, He is my song
 
 [Chorus]
         Em    D     C    G
@@ -36,7 +36,7 @@ You are good, good, oh - oh
 
 // Repeat 4x
 
-[Verse]
+[Verse 2]
         G
 Let the King of my heart
        C              G
@@ -68,7 +68,14 @@ G
 You're never gonna let
 never gonna let me down
 
-// Repeat 6x
+// Repeat 4x
+// Just pads
+
+G
+You're never gonna let
+never gonna let me down
+
+// Repeat 2x
 
 [Bridge 2]
 G
