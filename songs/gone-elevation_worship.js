@@ -18,7 +18,7 @@ Whoah, whoah
 [Verse 1]
    G                           C         G
 It wasn't for nothing that You shed Your blood
-   D                      Em       Cadd9
+   D                      Em       C
 So I'm gonna live like my shame is gone
 G                        C     G
 Won't be shackled to the way I was

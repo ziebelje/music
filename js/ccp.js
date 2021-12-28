@@ -336,7 +336,7 @@ ccp.render_song = function(i, download) {
   parsed.chart.forEach(function(section) {
     // Check to see if we need to switch to a new column.
     if(balance_columns === true) {
-      if(current_line + section.length  >= parsed.line_count / 2) {
+      if(current_line >= parsed.line_count / 2) {
         x = column_x[1];
         y = column_y;
         current_line = 0;
