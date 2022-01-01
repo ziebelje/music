@@ -6,7 +6,7 @@ ccp.songs.push({
   'timing': '6/8',
   'example': 'https://www.youtube.com/watch?v=QDlrrXGeEVs&t=1333s',
   'chart': `[Verse 1]
-          G
+         G
 I am the Lord your God,
        C
 I go before you now
@@ -28,9 +28,9 @@ G  G  Em7  Em7
 G  G  Em7  Em7
 
 [Verse 2]
-        G
+         G
 I am the Lord your peace,
-            C
+             C
 no evil will conquer you
                    D
 So steady now your heart and mind,

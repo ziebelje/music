@@ -5,15 +5,7 @@ ccp.songs.push({
   'tempo': 78,
   'timing': '4/4',
   'example': undefined,
-  'chart': `[Intro Riff]
-e|-----------------------|
-B|-----------------------|
-G|-2h4p2p0---------------|
-D|---------0h2p0---------|
-A|---------------0h2p0---|
-E|---------------------3-|
-
-[Intro]
+  'chart': `[Intro]
 G
 
 [Verse 1]
@@ -137,5 +129,13 @@ Slinging down the road like my daddy did
 
 C             D                   G
 Hey, just two kids In a big block Chevrolet
+
+[Intro Riff]
+e|-----------------------|
+B|-----------------------|
+G|-2h4p2p0---------------|
+D|---------0h2p0---------|
+A|---------------0h2p0---|
+E|---------------------3-|
 `
 });

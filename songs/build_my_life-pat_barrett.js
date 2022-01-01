@@ -23,7 +23,7 @@ C
  Worthy of every
 F
 breath we could ever breathe
-  C/E           F
+   C/E           F
 We live for you
 
 [Verse 2]
@@ -39,9 +39,9 @@ C
  Worthy of every
 F
 breath we could ever breathe
-C/E
+            C/E
 We live for you
-F
+            F
 We live for you
 
 [Chorus]

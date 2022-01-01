@@ -44,8 +44,8 @@ G
 Whoah, whoah
 
 [Verse 2]
-G                            C     G
-Praise is a weapon that will over--come
+G                            C   G
+Praise is a weapon that will overcome
     D                        Em       Cadd9
 Oh, I'm gonna shout like the battle's won
 Em        D                 C       G
@@ -69,21 +69,21 @@ And I sing hallelujah
 
 [Bridge]
 
-How great the power of the blood (Oh, oh)
-  G      C                G
+How great the power of the blood
+
 I am the righteousness of God
-Em  C     G
-Oh,       oh
+Em     C     G
+Whoah, whoah
     Em        D/F#         G   C
 How great the power of the blood
-Em  D  G
-Oh,    oh
-  Em     D/F#              G  C
+Em     D  G
+Whoah, whoah
+  Em     D/F#             G  C
 I am the righteousness of God
-Em  D  G
-Oh,    oh
-Em  D  G
-Oh,    oh
+Em     D  G
+Whoah, whoah
+Em     D  G
+Whoah, whoah
 
 [Chorus]
 Em    D/F#
@@ -109,11 +109,5 @@ Whoah, whoah
 G
 Whoah, whoah
 G
-Whoah, whoah
-
-// I believe the IV chord is always an add9
-// on the recording but I don't hear that in
-//the MR version. Reduced it to just once in
-// each verse.
-`
+Whoah, whoah`
 });

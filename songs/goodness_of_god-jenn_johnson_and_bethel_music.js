@@ -77,8 +77,6 @@ G                  C
      D             G
 It’s running after me
 
-// Repeat 2x
-
 [Chorus]
 C                           G
   All my life you have been faithful
