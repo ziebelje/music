@@ -15,7 +15,7 @@ ccp.parse = function(song) {
   let section = [];
   const lines = song.chart.split(/\r?\n/);
   lines.forEach(function(line) {
-    if(line.replace(/[ABCDEFG](#|b)?(m(aj)?)?(add|sus)?(\d)?(\/)?([ABCDEFG])?(#|b)?/g, '').trim() === '' && line.trim() !== '') {
+    if(line.replace(/[ABCDEFG](#|b)?(m(aj)?)?(add|sus)?(\d)?(\(no\d\))?(\/)?([ABCDEFG])?(#|b)?/g, '').trim() === '' && line.trim() !== '') {
       section.push({
         'text': line,
         'type': 'chord'
@@ -116,7 +116,7 @@ ccp.transpose = function(chart, semitones) {
   chart.forEach(function(section) {
     section.forEach(function(line) {
       if(line.type === 'chord') {
-        let matches = line.text.match(/([a-z0-9\s\/])|([ABCDEFG](#|b)?)/g);
+        let matches = line.text.match(/([a-z0-9\s\/\(\)])|([ABCDEFG](#|b)?)/g);
         let new_line_text = '';
         matches.forEach(function(match, i) {
           if(lookup[match] !== undefined) {
