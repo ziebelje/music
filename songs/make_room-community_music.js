@@ -9,7 +9,7 @@ ccp.songs.push({
 G  Dsus  A7sus  Csus2
 G  Dsus  A7sus  Csus2
 
-[Verse]
+[Verse 1]
 G                        Dsus
   Here is where I lay it down
                     A7sus
@@ -19,6 +19,7 @@ This is my surrender
 
 This is my surrender
 
+[Verse 2]
 G                        Dsus
   Here is where I lay it down
                     A7sus
@@ -36,10 +37,10 @@ To do whatever You want to
 
 // Repeat 2x
 
-[Instrumental]
+[Turnaround]
 G  Dsus  A7sus  Csus2
 
-[Verse]
+[Verse 1]
 G                        Dsus
   Here is where I lay it down
                     A7sus
@@ -49,6 +50,7 @@ This is my surrender
 
 This is my surrender
 
+[Verse 2]
 G                        Dsus
   Here is where I lay it down
                     A7sus
@@ -66,7 +68,7 @@ To do whatever You want to
 
 // Repeat 4x
 
-[Instrumental]
+[Turnaround]
 G  Dsus  A7sus  Csus2
 G  Dsus  A7sus  Csus2
 G  Dsus  A7sus  Csus2
@@ -93,10 +95,10 @@ To do whatever You want to
 
 // Repeat 2x
 
-[Instrumental]
+[Turnaround]
 G  Dsus  A7sus  Csus2
 
-[Verse 2]
+[Verse 3]
 G                        Dsus
   Here is where I lay it down
                     A7sus
@@ -106,6 +108,7 @@ This is my surrender
 
 This is my surrender
 
+[Verse 4]
 G                        Dsus
   Here is where I lay it down
                         A7sus

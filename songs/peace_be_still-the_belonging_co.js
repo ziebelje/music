@@ -82,9 +82,48 @@ Even when my eyes can't see
        A/C#                         Dsus2
 I will trust the voice that speaks
 
-[Interlude]
+[Refrain]
 Dsus2  Esus        F#m7  A/C#  Dsus2
 Peace, peace, over me
+
+[Bridge]
+    Dsus2
+Let faith rise up
+   Esus
+Oh heart believe
+    A/C#                 Dsus2
+Let faith rise up in me
+
+// Repeat 4x
+
+[Chorus]
+Dsus2
+Peace be still
+        Esus
+Say the word and I will
+       F#m7
+Set my feet upon the sea
+         A/C#
+Till I'm dancing in the deep
+    Dsus2
+Oh, peace be still
+        Esus
+You are here so it is well
+     F#m7
+Even when my eyes can't see
+       A/C#                         Dsus2
+I will trust the voice that speaks
+
+[Refrain]
+Dsus2  Esus        F#m7  A/C#  Dsus2
+Peace, peace, over me
+
+// Repeat 2x
+
+[Instrumental]
+Dsus2  Esus  A/C#  Dsus2
+
+// Repeat 5x
 
 [Bridge]
     Dsus2
@@ -118,7 +157,10 @@ I will trust the voice that speaks
 Dsus2  Esus        F#m7  A/C#  Dsus2
 Peace, peace, over me
 
-// Repeat 2x`
+// Repeat 2x
+
+[Outro]
+Dsus2  Esus  F#m7  A/C#`
 });
 
 
