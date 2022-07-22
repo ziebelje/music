@@ -2,8 +2,8 @@ ccp.songs.push({
   'title': 'Graves into Gardens',
   'author': 'Elevation Worship',
   'key': 'C',
-  'tempo': 148,
-  'timing': '4/4',
+  'tempo': 70,
+  'timing': '6/8',
   'example': null,
   'chart': `[Intro]
 C     F/C
@@ -79,6 +79,12 @@ Lord there's nothing
                        C
 Nothing is better than You
 
+// Repeat 2x
+
+[Interlude]
+C     F/C
+C
+
 [Bridge 1]
 C                               F  C
   You turn mourning to dancing
@@ -89,6 +95,8 @@ You turn shame into glory
            Am  F       C
 You're the only one who can
 
+// Repeat 2x
+
 [Bridge 2]
 C                              F  C
   You turn graves into gardens
@@ -96,6 +104,8 @@ C                              F  C
 You turn bones into armies
                             F
 You turn seas into highways
+           Am  F       C
+You're the only one who can
            Am  F       C
 You're the only one who can
 
@@ -109,15 +119,7 @@ Oh there's nothing
                        C
 Nothing is better than You
 
-[Chorus]
-           C
-Oh there's nothing better than You
-           Am
-Oh there's nothing better than You
-             F
-Lord there's nothing
-                       C
-Nothing is better than You
+// Repeat 2x
 
 [Bridge 2]
 C                              F  C
@@ -128,6 +130,10 @@ You turn bones into armies
 You turn seas into highways
            Am  F       C
 You're the only one who can
+
+// Repeat 2x
+
+[Ending]
            Am  F       C
 You're the only one who can
            Am  F       C     F  C

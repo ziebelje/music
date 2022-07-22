@@ -6,8 +6,9 @@ ccp.songs.push({
   'timing': '4/4',
   'example': null,
   'chart': `[Intro]
-C#m7 Asus2 E G#m7
 C#m7 Asus2 E Bsus4
+
+// No AG
 
 [Verse 1]
 C#m7      Asus2
@@ -16,6 +17,10 @@ E         Bsus4
  We won't fear the fight
 C#m7       Asus2          E     Bsus2
  There is One who's stronger
+
+// No AG
+
+ [Verse 2]
 C#m7           Asus2
  Hard pressed on each side
 E        E/G#
@@ -33,13 +38,15 @@ One King who reigns for all eternity
 C#m7    Asus2   E/G#   Bsus4
 Je  -  sus,    Je  -  sus
 
-[Verse 2]
+[Verse 3]
 C#m7     Asus2
  On the battlefield
 E           Bsus4
  Your power is revealed
 C#m7     Asus2  E      Bsus4
  Giants fall defeated
+
+[Verse 4]
 C#m7     Asus2
  We are taking ground
 E          E/G#
@@ -60,7 +67,10 @@ C#m7    Asus2   E/G#   Bsus4
 Je  -  sus,    Je  -  sus
 
 [Instrumental]
-| Asus4     Bsus4  | C#m     B/D#  | E     E/G#  | Bsus4     E/G#  |  x2
+Asus4  Bsus4  C#m  B/D#  E  E/G#  Bsus4  E/G#
+Asus4  Bsus4  C#m  B/D#  E  E/G#  Bsus4  E/G#
+
+// No AG
 
 [Bridge]
 A          Bsus4  C#m7
@@ -75,18 +85,8 @@ Asus2                 Bsus4  C#m7
 Hell could not defy Your name
         E/G#  Bsus4           E/G#
 You rose,           You reign
-A          Bsus4  C#m7
-Every victory is  Yours
-           B/D#  E
-Every victory is Yours
-        E/G#  Bsus4           E/G#
-You rose,          You reign
-Asus2                 Bsus4  C#m7
-      Death is buried in the grave
-                 B/D#    E
-Hell could not defy Your name
-        E/G#  Bsus4           E/G#
-You rose,           You reign
+
+// Repeat 2x
 
 [Chorus]
 N.C.
@@ -107,4 +107,77 @@ One King who reigns for all eternity
 C#m7    Asus2   E/G#   Bsus4
 Je  -  sus,    Je  -  sus
 C#m7    Asus2   E/G#   Bsus4
-Je  -  sus,    Je  -  sus`});
+Je  -  sus,    Je  -  sus
+
+[Interlude]
+Asus4  Bsus4  C#m  B/D#  E  Bsus4
+Asus4  Bsus4  C#m  B/D#  E  Bsus4
+Asus4  Bsus4  C#m  B/D#  E  Bsus4
+Asus4  Bsus4  C#m  B/D#  E  Bsus4
+
+// First time no picking, pick other parts
+
+[Refrain]
+Asus2   Bsus  C#m7  B/D#
+Oh,     oh,        oh
+E           E/G#     Bsus4    E/G#
+ The battle is   the Lord's
+Asus2   Bsus4  C#m7  B/D#
+Oh,     oh,         oh
+E           E/G#   Bsus4  E/G#
+  The victory   is Yours
+
+// Repeat 2x
+
+[Bridge]
+A          Bsus4  C#m7
+Every victory is  Yours
+           B/D#  E
+Every victory is Yours
+        E/G#  Bsus4           E/G#
+You rose,          You reign
+Asus2                 Bsus4  C#m7
+      Death is buried in the grave
+                 B/D#    E
+Hell could not defy Your name
+        E/G#  Bsus4           E/G#
+You rose,           You reign
+
+[Refrain]
+Asus2   Bsus  C#m7  B/D#
+Oh,     oh,        oh
+E           E/G#     Bsus4    E/G#
+ The battle is   the Lord's
+Asus2   Bsus4  C#m7  B/D#
+Oh,     oh,         oh
+E           E/G#   Bsus4  E/G#
+  The victory   is Yours
+
+// Play high
+
+[Refrain]
+N.C.
+Oh,     oh,        oh
+N.C.
+ The battle is   the Lord's
+Asus2   Bsus4  C#m7  B/D#
+Oh,     oh,         oh
+E           E/G#   Bsus4  E/G#
+  The victory   is Yours
+
+// Play normal
+
+[Refrain]
+Asus2   Bsus  C#m7  B/D#
+Oh,     oh,        oh
+E           E/G#     Bsus4    E/G#
+ The battle is   the Lord's
+Asus2   Bsus4  C#m7  B/D#
+Oh,     oh,         oh
+E           E/G#   Bsus4  E/G#
+  The victory   is Yours
+
+// Play high
+
+[Ending]
+A`});
