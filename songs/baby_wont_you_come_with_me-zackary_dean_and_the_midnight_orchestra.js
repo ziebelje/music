@@ -15,7 +15,7 @@ Sittin' there with a beautiful view
 Of a Georgia sunset long overdue its overdue
 G
 Take my hand we'll walk together
-                               C
+                               C            G
 Down this road we call forever baby take my hand
 
 [Pre-Chorus 1]
@@ -68,7 +68,7 @@ You're all I need
 Baby won't you come with me
 
 [Solo]
-G  C  Em  G
+G  C  Em  C
 G
 
 [Pre-Chorus 2]

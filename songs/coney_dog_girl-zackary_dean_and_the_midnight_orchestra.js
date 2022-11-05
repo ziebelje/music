@@ -1,7 +1,7 @@
 ccp.songs.push({
   'title': 'Coney Dog Girl',
   'author': 'Zackary Dean & The Midnight Orchestra',
-  'key': 'G',
+  'key': 'E',
   'tempo': 78,
   'timing': '4/4',
   'example': undefined,

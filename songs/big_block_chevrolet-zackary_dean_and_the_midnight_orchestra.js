@@ -53,6 +53,7 @@ Got married had a baby,
 had another and divorced too
           G               D/F#
 What aint changed My best friend
+
      Em
 Is a big red pickem up,
 D
@@ -93,7 +94,7 @@ C G D
 
 G
 
-[Bridge]
+[Verse 3]
 G                       D/F#
 And that girl I used to know
 Em                                 C
