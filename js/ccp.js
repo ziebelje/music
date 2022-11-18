@@ -273,6 +273,9 @@ ccp.render_song = function(i, download) {
   if(parsed.tuning !== undefined) {
     extra_info.push('Tuning: ' + parsed.tuning);
   }
+  if(parsed.example !== undefined) {
+    extra_info.push('<a href="' + parsed.example + '">Example</a>');
+  }
 
 
   if(extra_info.length > 0) {
