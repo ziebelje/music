@@ -84,7 +84,7 @@ E                   B
 And every knee will Bow
 F#                      G#m7   F#
 Every tongue shall confsess You
-E      B <-F#?
+E      F#
 Jesus, Jesus
 
 [Tag]
@@ -132,7 +132,8 @@ Yes it's all about You
 // Repeat 4x
 
 [Solo]
-TODO?
+F#  G#m  E  F#
+F#  G#m  E  F#
 
 [Bridge]
      F#
@@ -144,7 +145,4 @@ It's all about You
          F#sus     F#
 Yes it's all about You
 
-// Repeat 6x
-
-[Ending]
-TODO?`});
+// Repeat 6x`});

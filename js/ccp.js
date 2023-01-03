@@ -15,7 +15,7 @@ ccp.parse = function(song) {
   let section = [];
   const lines = song.chart.split(/\r?\n/);
   lines.forEach(function(line) {
-    if(line.replace(/[ABCDEFG](#|b)?(m(aj)?)?(add|sus)?(\d)?(\(no\d\))?(\/)?([ABCDEFG])?(#|b)?/g, '').trim() === '' && line.trim() !== '') {
+    if(line.replace(/[ABCDEFG](#|b)?(m(aj)?)?(add|sus)?(\d+)?(\(no\d\))?(\/)?([ABCDEFG])?(#|b)?/g, '').trim() === '' && line.trim() !== '') {
       section.push({
         'text': line,
         'type': 'chord'
