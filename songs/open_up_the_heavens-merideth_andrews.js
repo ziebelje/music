@@ -76,10 +76,10 @@ G
     Show us, show us Your glory
 C2
     show us, show us Your power,
-G                                C2
+Em7          D                     C2
     show us, show us Your glory, Lord
 
-// Repeat 2x
+// Repeat 3x
 
 [Interlude]
 G  G  C2  C2
