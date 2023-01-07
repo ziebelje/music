@@ -465,7 +465,15 @@ ccp.download_live = function(i) {
     y += 10;
   };
 
+  const draw_page_footer = function() {
+    pdf.setFontSize(22);
+    pdf.setFont('courier', 'bold');
+    pdf.setTextColor('#e5b567');
+    pdf.text(pdf.internal.getNumberOfPages() + '', 205, 275);
+  };
+
   draw_page_header();
+  draw_page_footer();
 
 
 
@@ -473,6 +481,7 @@ ccp.download_live = function(i) {
     if(current_line + section.length > line_limit) {
       pdf.addPage();
       draw_page_header();
+      draw_page_footer();
     }
 
     section.forEach(function(line) {
